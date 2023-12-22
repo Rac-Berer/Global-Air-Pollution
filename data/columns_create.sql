@@ -1,16 +1,16 @@
 CREATE TABLE Cities (
-    CityID INT PRIMARY KEY,
-    CityName VARCHAR(255),
-    Country VARCHAR(255) 
+    City_ID INT PRIMARY KEY,
+    City VARCHAR(255) NOT NULL,
+    Country VARCHAR(255) NOT NULL 
 );
 
 	SELECT * FROM Cities;
--- drop table Cities
+-- drop table Cities;
 
 CREATE TABLE GlobalAirPollution (
-    CityID INT,
-	Country VARCHAR(255),
-    City VARCHAR(255),
+    City_ID INT,
+	City VARCHAR(255) NOT NULL,
+	Country VARCHAR(255) NOT NULL,
     AQI_Value INT,
     AQI_Category VARCHAR(255) NOT NULL,
     CO_AQI_Value INT,
@@ -21,9 +21,8 @@ CREATE TABLE GlobalAirPollution (
     NO2_AQI_Category VARCHAR(255) NOT NULL,
     PM25_AQI_Value INT,
     PM25_AQI_Category VARCHAR(255) NOT NULL,
-    FOREIGN KEY (CityID) REFERENCES Cities(CityID)
+    FOREIGN KEY (City_ID) REFERENCES Cities(City_ID)
 );
 	
 	SELECT * FROM GlobalAirPollution;
--- drop table GlobalAirPollution
-
+-- drop table GlobalAirPollution;
