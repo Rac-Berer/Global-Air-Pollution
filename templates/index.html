@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Air Quality Data</title>
+</head>
+<body>
+    <h1>Welcome to the Air Quality API!</h1>
+    <p>Overall AQI Data:</p>
+    <ul>
+        {% for item in data %}
+        <li>Country: {{ item.Country }}, City: {{ item.City }}, AQI: {{ item.AQI_Value }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
