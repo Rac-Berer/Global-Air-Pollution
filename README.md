@@ -8,7 +8,7 @@ Pollutants of major public health concerns include particulate matter, carbon mo
 Outdoor and indoor air pollution causes respiratory and other diseases and are important sources of morbidity and mortality.
 
 
-
+•	Carbon Monoxide [CO]: Carbon Monoxide is a gas that is colorless and odorless. All vehicles or machineries that burn fossil fuels emit CO, as well as gas stoves and gas/kerosene space heaters.  Breathing a high concentration of CO reduces the amount of oxygen that can be transported in the blood stream to critical organs like the heart and brain. At very high levels, which are not likely to occur outdoor but which are possible in enclosed environments. CO can cause dizziness, confusion, unconsciousness and death.
 
 
 
