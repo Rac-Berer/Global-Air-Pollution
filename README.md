@@ -24,3 +24,4 @@ Outdoor and indoor air pollution causes respiratory and other diseases and are i
 
 References:
 https://www.kaggle.com/datasets/hasibalmuzdadid/global-air-pollution-dataset/data
+https://stackoverflow.com/questions/37427362/plt-show-shows-full-graph-but-savefig-is-cropping-the-image
