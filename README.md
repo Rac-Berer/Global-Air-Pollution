@@ -20,6 +20,7 @@ This dataset provides geolocated information about the following pollutants:
 
 
 References:
-https://www.kaggle.com/datasets/hasibalmuzdadid/global-air-pollution-dataset/data
-https://stackoverflow.com/questions/37427362/plt-show-shows-full-graph-but-savefig-is-cropping-the-image
-https://www.chartjs.org/
+Dataset - https://www.kaggle.com/datasets/hasibalmuzdadid/global-air-pollution-dataset/data
+Saving the image without it cropped - https://stackoverflow.com/questions/37427362/plt-show-shows-full-graph-but-savefig-is-cropping-the-image
+for loop in an f string - https://stackoverflow.com/questions/59956496/f-strings-formatter-including-for-loop-or-if-conditions
+Context we have not learned in class - https://www.chartjs.org/
