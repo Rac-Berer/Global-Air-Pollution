@@ -4,19 +4,16 @@ Think of AQI as a yardstick that runs from 0 to 500. The higher the AQI value, t
 
 By definition, Air Pollution is contamination of the indoor or outdoor environment by any chemical, physical or biological agent that modifies the natural characteristics of the atmosphere. 
 Household combustion devices, motor vehicles, industrial facilities and forest fires are common sources of air pollution. 
-Pollutants of major public health concerns include particulate matter, carbon monoxide, ozone, nitrogen dioxide, and sulfur dioxide.
-Outdoor and indoor air pollution causes respiratory and other diseases and are important sources of morbidity and mortality.
 
+This dataset provides geolocated information about the following pollutants:
+
+•	Nitrogen Dioxide [NO2]: Nitrogen Dioxide (NO2) is one of a group of highly reactive gases known as oxides of nitrogen or nitrogen oxides (NOx). Other nitrogen oxides include nitrous acid and nitric acid. NO2 primarily gets in the air from the burning of fuel. Elevated levels of nitrogen dioxide can cause damage to the human respiratory tract and increase a person's vulnerability to, and the severity of, respiratory infections and asthma. Long-term exposure to high levels of nitrogen dioxide can cause chronic lung disease.
+
+•	Ozone [O3]: Ozone is an odorless, colorless gas made up of three oxygen molecules (O3) and is a natural part of the environment. When inhaled, ozone can damage the lungs. Adults and children who breathe high levels of ozone for a short period of time (minutes or hours) can experience eye, nose and throat irritation, shortness of breath, chest pain and coughing. Breathing high levels of ozone can worsen asthma symptoms.
 
 •	Carbon Monoxide [CO]: Carbon Monoxide is a gas that is colorless and odorless. All vehicles or machineries that burn fossil fuels emit CO, as well as gas stoves and gas/kerosene space heaters.  Breathing a high concentration of CO reduces the amount of oxygen that can be transported in the blood stream to critical organs like the heart and brain. At very high levels, which are not likely to occur outdoor but which are possible in enclosed environments. CO can cause dizziness, confusion, unconsciousness and death.
 
-
-
-
-
-
-
-
+•	Particulate Matter [PM2.5]: Particulate Matter (PM) is a mixture of solid and liquid particles that are suspended in the air. These are categorized into coarse, fine, and ultrafine. PM2.5 are fine particles that have a diameter of less than 2.5 micrometers (more than 100 times thinner than a human hair) and remain suspended in the air for longer durations. The health risk with PM2.5 is that they can travel deep into the respiratory tract, reaching the lungs and entering the bloodstream.
 
 
 
