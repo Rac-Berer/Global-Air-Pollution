@@ -2,16 +2,20 @@
 import pandas as pd
 
 def load_data():
-    # Update the path if your CSV file is located elsewhere
-    pollution = pd.read_csv("data/global_air_pollutiondataset.csv")
-    return pollution
+    return pd.read_csv("data/global_air_pollutiondataset.csv")
+
+def get_top_5_by_metric(metric):
+    pollution = load_data()
+    top_5 = pollution.groupby('City')[metric].mean().nlargest(5).reset_index()
+    return top_5.to_dict(orient='records')
 
 def get_overall_aqi():
-    pollution = load_data()
-    pollution_cleaned = pollution.dropna()
-    overall_aqi = pollution_cleaned[['Country', 'City', 'AQI_Value']].to_dict(orient='records')
-    return overall_aqi
+    return get_top_5_by_metric('AQI_Value')
 
-# Define similar functions for CO AQI, Ozone AQI, etc.
+def get_co_aqi():
+    return get_top_5_by_metric('CO_AQI_Value')
 
-# Add more functions as needed
+def get_ozone_aqi():
+    return get_top_5_by_metric('Ozone_AQI_Value')
+
+# Add similar functions for other AQI metrics
