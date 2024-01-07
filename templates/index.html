@@ -3,34 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <title>Air Quality Data</title>
+    <link rel="stylesheet" href="/static/CSS/style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        .chart-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-        canvas {
-            margin: 20px;
-        }
-    </style>
 </head>
 <body>
     <h1>Air Quality Charts</h1>
-    <div class="chart-container">
-        <canvas id="overallAqiChart"></canvas>
-        <canvas id="coAqiChart"></canvas>
-        <canvas id="ozoneAqiChart"></canvas>
-        <!-- Add more canvas elements for other charts here -->
+
+    <!-- Content container for Overall AQI -->
+    <div class="content-container">
+        <div class="chart-container">
+            <canvas id="overallAqiChart"></canvas>
+        </div>
+        <div class="table-container" id="overallAqiTable"></div>
+    </div>
+
+    <!-- Content container for CO AQI -->
+    <div class="content-container">
+        <div class="chart-container">
+            <canvas id="coAqiChart"></canvas>
+        </div>
+        <div class="table-container" id="coAqiTable"></div>
+    </div>
+
+    <!-- Content container for Ozone AQI -->
+    <div class="content-container">
+        <div class="chart-container">
+            <canvas id="ozoneAqiChart"></canvas>
+        </div>
+        <div class="table-container" id="ozoneAqiTable"></div>
+    </div>
+
+    <!-- Content container for NO2 AQI -->
+    <div class="content-container">
+        <div class="chart-container">
+            <canvas id="no2AqiChart"></canvas>
+        </div>
+        <div class="table-container" id="no2AqiTable"></div>
+    </div>
+
+    <!-- Content container for PM2.5 AQI -->
+    <div class="content-container">
+        <div class="chart-container">
+            <canvas id="pm25AqiChart"></canvas>
+        </div>
+        <div class="table-container" id="pm25AqiTable"></div>
+    </div>
+
+    <!-- Content container for Average AQI for selected countries -->
+    <div class="content-container">
+        <div class="chart-container">
+            <canvas id="avgAqiCountriesChart"></canvas>
+        </div>
+        <div class="table-container" id="avgAqiCountriesTable"></div>
     </div>
 
     <script>
+        // Function to create a chart
         function createChart(canvasId, data, metric) {
             const ctx = document.getElementById(canvasId).getContext('2d');
-            new Chart(ctx, {
+            const chart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: data.map(item => item.City),
+                    labels: data.map(item => item.City || item.Country), // Use Country if City is undefined
                     datasets: [{
                         label: metric,
                         data: data.map(item => item[metric]),
@@ -49,17 +83,34 @@
             });
         }
 
-        function fetchDataAndCreateChart(endpoint, canvasId, metric) {
+        // Function to create a table
+        function createTable(tableId, data, metric) {
+            let tableHTML = `<table><tr><th>Location</th><th>${metric}</th></tr>`;
+            data.forEach(item => {
+                tableHTML += `<tr><td>${item.City || item.Country}</td><td>${item[metric]}</td></tr>`;
+            });
+            tableHTML += '</table>';
+            document.getElementById(tableId).innerHTML = tableHTML;
+        }
+
+        // Function to fetch data and create chart and table
+        function fetchDataAndCreateChartAndTable(endpoint, canvasId, tableId, metric) {
             fetch(endpoint)
                 .then(response => response.json())
-                .then(data => createChart(canvasId, data, metric))
+                .then(data => {
+                    createChart(canvasId, data, metric);
+                    createTable(tableId, data, metric);
+                })
                 .catch(error => console.error('Error fetching data:', error));
         }
 
-        fetchDataAndCreateChart('/api/overall_aqi', 'overallAqiChart', 'AQI_Value');
-        fetchDataAndCreateChart('/api/co_aqi', 'coAqiChart', 'CO_AQI_Value');
-        fetchDataAndCreateChart('/api/ozone_aqi', 'ozoneAqiChart', 'Ozone_AQI_Value');
-        // Fetch and create charts for other AQI metrics
+        // Fetch and create charts and tables for each metric
+        fetchDataAndCreateChartAndTable('/api/overall_aqi', 'overallAqiChart', 'overallAqiTable', 'AQI_Value');
+        fetchDataAndCreateChartAndTable('/api/co_aqi', 'coAqiChart', 'coAqiTable', 'CO_AQI_Value');
+        fetchDataAndCreateChartAndTable('/api/ozone_aqi', 'ozoneAqiChart', 'ozoneAqiTable', 'Ozone_AQI_Value');
+        fetchDataAndCreateChartAndTable('/api/no2_aqi', 'no2AqiChart', 'no2AqiTable', 'NO2_AQI_Value');
+        fetchDataAndCreateChartAndTable('/api/pm25_aqi', 'pm25AqiChart', 'pm25AqiTable', 'PM2.5_AQI_Value');
+        fetchDataAndCreateChartAndTable('/api/avg_aqi_countries', 'avgAqiCountriesChart', 'avgAqiCountriesTable', 'AQI_Value');
     </script>
 </body>
 </html>
