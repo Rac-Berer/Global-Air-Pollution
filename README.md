@@ -1,4 +1,4 @@
-Objective :
+**Objective :**
 1. Analyze and compare air quality data across major cities around the world.
 2. To identify pollution trends and highlight areas with critical air quality issues. 
 
