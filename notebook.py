@@ -30,3 +30,9 @@ def get_avg_aqi_for_countries(countries):
     avg_aqi_per_country = filtered_pollution.groupby('Country')['AQI_Value'].mean().reset_index()
     avg_aqi_per_country['AQI_Value'] = avg_aqi_per_country['AQI_Value'].round(2)
     return avg_aqi_per_country.to_dict(orient='records')
+
+def get_highest_lowest_aqi():
+    pollution = load_data()
+    highest_aqi = pollution.nlargest(1, 'AQI_Value')[['Country', 'City', 'AQI_Value']].to_dict(orient='records')
+    lowest_aqi = pollution.nsmallest(1, 'AQI_Value')[['Country', 'City', 'AQI_Value']].to_dict(orient='records')
+    return {'highest': highest_aqi, 'lowest': lowest_aqi}

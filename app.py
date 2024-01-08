@@ -42,12 +42,17 @@ def avg_aqi_countries():
         "Russian Federation", 
         "China",
         "Germany",
-        "France",
+        "Pakistan",
         "Mexico",
         "Brazil",
-        "Australia"
+        "Bolivia (Plurinational State of)"
     ]
     data = notebook.get_avg_aqi_for_countries(countries)
+    return jsonify(data)
+
+@app.route('/api/highest_lowest_aqi')
+def highest_lowest_aqi():
+    data = notebook.get_highest_lowest_aqi()
     return jsonify(data)
 
 if __name__ == '__main__':

@@ -9,6 +9,9 @@
 <body>
     <h1>Air Quality Charts</h1>
 
+    <h2>Highest and Lowest AQI</h2>
+    <div id="aqiExtremes"></div>
+
     <!-- Content container for Overall AQI -->
     <div class="content-container">
         <div class="chart-container">
@@ -103,6 +106,23 @@
                 })
                 .catch(error => console.error('Error fetching data:', error));
         }
+
+        function displayAqiExtremes(data) {
+            const highest = data.highest[0];
+            const lowest = data.lowest[0];
+            let extremesHTML = `
+                <h3>Highest AQI</h3>
+                <p>Country: ${highest.Country}, City: ${highest.City}, AQI: ${highest.AQI_Value}</p>
+                <h3>Lowest AQI</h3>
+                <p>Country: ${lowest.Country}, City: ${lowest.City}, AQI: ${lowest.AQI_Value}</p>
+            `;
+            document.getElementById('aqiExtremes').innerHTML = extremesHTML;
+        }
+    
+        fetch('/api/highest_lowest_aqi')
+            .then(response => response.json())
+            .then(displayAqiExtremes)
+            .catch(error => console.error('Error fetching AQI extremes:', error));
 
         // Fetch and create charts and tables for each metric
         fetchDataAndCreateChartAndTable('/api/overall_aqi', 'overallAqiChart', 'overallAqiTable', 'AQI_Value');
