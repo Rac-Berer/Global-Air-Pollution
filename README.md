@@ -1,3 +1,7 @@
+Objective :
+1. Analyze and compare air quality data across major cities around the world.
+2. To identify pollution trends and highlight areas with critical air quality issues. 
+
 **Global-Air-Pollution** 
 This dataset contains AQI (Air Quality Index) of different pollutants for many cities around the world.
 Think of AQI as a yardstick that runs from 0 to 500. The higher the AQI value, the greater the level of air pollution and the greater the health concern.
