@@ -18,7 +18,6 @@ This dataset provides geolocated information about the following pollutants:
 
 
 
-
 References:
 Dataset - https://www.kaggle.com/datasets/hasibalmuzdadid/global-air-pollution-dataset/data
 Saving the image without it cropped - https://stackoverflow.com/questions/37427362/plt-show-shows-full-graph-but-savefig-is-cropping-the-image
