@@ -6,7 +6,7 @@ def load_data():
 
 def get_top_5_by_metric(metric):
     pollution = load_data()
-    top_5 = pollution.groupby('City')[metric].mean().nlargest(5).reset_index()
+    top_5 = pollution.groupby('City')[metric].mean().nlargest(10).reset_index()
     return top_5.to_dict(orient='records')
 
 def get_overall_aqi():
@@ -18,4 +18,21 @@ def get_co_aqi():
 def get_ozone_aqi():
     return get_top_5_by_metric('Ozone_AQI_Value')
 
-# Add similar functions for other AQI metrics
+def get_no2_aqi():
+    return get_top_5_by_metric('NO2_AQI_Value')
+
+def get_pm25_aqi():
+    return get_top_5_by_metric('PM2.5_AQI_Value')
+
+def get_avg_aqi_for_countries(countries):
+    pollution = load_data()
+    filtered_pollution = pollution[pollution['Country'].isin(countries)]
+    avg_aqi_per_country = filtered_pollution.groupby('Country')['AQI_Value'].mean().reset_index()
+    avg_aqi_per_country['AQI_Value'] = avg_aqi_per_country['AQI_Value'].round(2)
+    return avg_aqi_per_country.to_dict(orient='records')
+
+def get_highest_lowest_aqi():
+    pollution = load_data()
+    highest_aqi = pollution.nlargest(1, 'AQI_Value')[['Country', 'City', 'AQI_Value']].to_dict(orient='records')
+    lowest_aqi = pollution.nsmallest(1, 'AQI_Value')[['Country', 'City', 'AQI_Value']].to_dict(orient='records')
+    return {'highest': highest_aqi, 'lowest': lowest_aqi}

@@ -6,28 +6,54 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    # Serve the index.html file
     return render_template('index.html')
 
 @app.route('/api/overall_aqi')
 def overall_aqi():
-    # Fetch and return overall AQI data
     data = notebook.get_overall_aqi()
     return jsonify(data)
 
 @app.route('/api/co_aqi')
 def co_aqi():
-    # Fetch and return CO AQI data
     data = notebook.get_co_aqi()
     return jsonify(data)
 
 @app.route('/api/ozone_aqi')
 def ozone_aqi():
-    # Fetch and return Ozone AQI data
     data = notebook.get_ozone_aqi()
     return jsonify(data)
 
-# ... Add similar routes for other AQI metrics ...
+@app.route('/api/no2_aqi')
+def no2_aqi():
+    data = notebook.get_no2_aqi()
+    return jsonify(data)
+
+@app.route('/api/pm25_aqi')
+def pm25_aqi():
+    data = notebook.get_pm25_aqi()
+    return jsonify(data)
+
+@app.route('/api/avg_aqi_countries')
+def avg_aqi_countries():
+    countries = [
+        "India", 
+        "United States of America", 
+        "United Kingdom of Great Britain and Northern Ireland", 
+        "Russian Federation", 
+        "China",
+        "Germany",
+        "Pakistan",
+        "Mexico",
+        "Brazil",
+        "Bolivia (Plurinational State of)"
+    ]
+    data = notebook.get_avg_aqi_for_countries(countries)
+    return jsonify(data)
+
+@app.route('/api/highest_lowest_aqi')
+def highest_lowest_aqi():
+    data = notebook.get_highest_lowest_aqi()
+    return jsonify(data)
 
 if __name__ == '__main__':
     app.run(debug=True)
