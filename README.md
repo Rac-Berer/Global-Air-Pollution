@@ -15,7 +15,8 @@ This dataset provides geolocated information about the following pollutants:
 
 •	Particulate Matter [PM2.5]: Particulate Matter (PM) is a mixture of solid and liquid particles that are suspended in the air. These are categorized into coarse, fine, and ultrafine. PM2.5 are fine particles that have a diameter of less than 2.5 micrometers (more than 100 times thinner than a human hair) and remain suspended in the air for longer durations. The health risk with PM2.5 is that they can travel deep into the respiratory tract, reaching the lungs and entering the bloodstream.
 
-How to use and interact with the project : It’s very simple, just run app.py file by clicking on run button on too right in VS code then it will give you a link in terminal at the bottom just click that link and it will open up google web page w all the charts.
+How to use and interact with the project : Run app.py file by clicking on run button on too right in VS code then it will give you a link in terminal at the bottom just click that link and it will open up google web page w all the charts.
+
 
 
 
