@@ -40,7 +40,12 @@ def avg_aqi_countries():
         "United States of America", 
         "United Kingdom of Great Britain and Northern Ireland", 
         "Russian Federation", 
-        "China"
+        "China",
+        "Germany",
+        "France",
+        "Mexico",
+        "Brazil",
+        "Australia"
     ]
     data = notebook.get_avg_aqi_for_countries(countries)
     return jsonify(data)
