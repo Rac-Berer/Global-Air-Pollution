@@ -17,7 +17,7 @@ This dataset provides geolocated information about the following pollutants:
 
 How to use and interact with the project : Run app.py file by clicking on run button on too right in VS code then it will give you a link in terminal at the bottom just click that link and it will open up google web page w all the charts.
 
-Pollution stunts economic growth, exacerbates poverty and inequality in both urban and rural areas, and significantly contributes to climate change. Poor people, who cannot afford to protect themselves from the negative impacts of pollution, end up suffering the most. (https://www.worldbank.org/en/topic/pollution) The air pollution spans generations, the project presents data based on AQI of various pollutants globally and presenting the risk if we do neot do anything about it. Although it might invoilve long-term solutions but we, as responsible citizens, must take steps towards a better tomorrow. (https://www.pranaair.com/us/blog/10-ways-to-reduce-air-pollution).
+Pollution stunts economic growth, exacerbates poverty and inequality in both urban and rural areas, and significantly contributes to climate change. Poor people, who cannot afford to protect themselves from the negative impacts of pollution, end up suffering the most. (https://www.worldbank.org/en/topic/pollution) The air pollution spans generations, the project presents data based on AQI of various pollutants globally and presenting the risk if we do neot do anything about it. Although it might invoilve long-term solutions but we, as responsible citizens, must take steps towards a better tomorrow. .
 
 ![image](https://github.com/Rac-Berer/Global-Air-Pollution/assets/143920584/956c1284-3eeb-45f7-a99d-7b5aa17ea326)
 
@@ -26,3 +26,4 @@ Dataset - https://www.kaggle.com/datasets/hasibalmuzdadid/global-air-pollution-d
 Saving the image without it cropped - https://stackoverflow.com/questions/37427362/plt-show-shows-full-graph-but-savefig-is-cropping-the-image
 for loop in an f string - https://stackoverflow.com/questions/59956496/f-strings-formatter-including-for-loop-or-if-conditions
 Context we have not learned in class - https://www.chartjs.org/
+(https://www.pranaair.com/us/blog/10-ways-to-reduce-air-pollution)
