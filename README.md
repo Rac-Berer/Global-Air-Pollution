@@ -1,3 +1,7 @@
+**Objective :**
+1. Analyze and compare air quality data across major cities around the world.
+2. To identify pollution trends and highlight areas with critical air quality issues. 
+
 **Global-Air-Pollution** 
 This dataset contains AQI (Air Quality Index) of different pollutants for many cities around the world.
 Think of AQI as a yardstick that runs from 0 to 500. The higher the AQI value, the greater the level of air pollution and the greater the health concern.
@@ -15,11 +19,15 @@ This dataset provides geolocated information about the following pollutants:
 
 •	Particulate Matter [PM2.5]: Particulate Matter (PM) is a mixture of solid and liquid particles that are suspended in the air. These are categorized into coarse, fine, and ultrafine. PM2.5 are fine particles that have a diameter of less than 2.5 micrometers (more than 100 times thinner than a human hair) and remain suspended in the air for longer durations. The health risk with PM2.5 is that they can travel deep into the respiratory tract, reaching the lungs and entering the bloodstream.
 
+How to use and interact with the project : Run app.py file by clicking on run button on too right in VS code then it will give you a link in terminal at the bottom just click that link and it will open up google web page w all the charts.
 
+Pollution stunts economic growth, exacerbates poverty and inequality in both urban and rural areas, and significantly contributes to climate change. Poor people, who cannot afford to protect themselves from the negative impacts of pollution, end up suffering the most. (https://www.worldbank.org/en/topic/pollution) The air pollution spans generations, our team in this project presents data based on AQI of various pollutants globally and presenting the risk if we do not do anything about it. But presented are some ways what we as individuals can do to help mitigate the negative effect of the various pollutants.  (https://www.pranaair.com/us/blog/10-ways-to-reduce-air-pollution). 
 
+![image](https://github.com/Rac-Berer/Global-Air-Pollution/assets/143920584/956c1284-3eeb-45f7-a99d-7b5aa17ea326)
 
 References:
 Dataset - https://www.kaggle.com/datasets/hasibalmuzdadid/global-air-pollution-dataset/data
 Saving the image without it cropped - https://stackoverflow.com/questions/37427362/plt-show-shows-full-graph-but-savefig-is-cropping-the-image
 for loop in an f string - https://stackoverflow.com/questions/59956496/f-strings-formatter-including-for-loop-or-if-conditions
 Context we have not learned in class - https://www.chartjs.org/
+
